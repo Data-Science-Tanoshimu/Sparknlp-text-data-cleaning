@@ -19,6 +19,7 @@ The whole architecture is like the picture below.
 ### Dataproc cluster command
 - Create cluster
 
+```
 gcloud dataproc clusters create CLUSTER_NAME \
   --region=REGION \
   --image-version=2.0 \
@@ -32,15 +33,18 @@ gcloud dataproc clusters create CLUSTER_NAME \
   --metadata 'PIP_PACKAGES=google-cloud-storage spark-nlp==2.7.2 google-cloud-bigquery' \
   --initialization-actions gs://goog-dataproc-initialization-actions-us-central1/python/pip-install.sh \
   --properties spark:spark.serializer=org.apache.spark.serializer.KryoSerializer,spark:spark.driver.maxResultSize=0,spark:spark.kryoserializer.buffer.max=2000M,spark:spark.jars.packages=com.johnsnowlabs.nlp:spark-nlp_2.12:3.3.4
+```
 
 - Submit jobs
 
+```
 gcloud dataproc jobs submit pyspark PYTHON_FILE \
     --cluster=CLUSTER_NAME \
     --region=REGION \
     --jars=gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar \
     --driver-log-levels root=FATAL,com.example=INFO
+```
     
 - Delete cluster
 
-gcloud dataproc clusters delete CLUSTER_NAME --region=REGION
+`gcloud dataproc clusters delete CLUSTER_NAME --region=REGION`
