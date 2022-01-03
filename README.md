@@ -7,6 +7,7 @@ This uses the following GCP services:
   - Cloud Functions (Scrapes data and creates simulated data to clean)
   - Cloud Storage (Stores the simulated data)
   - Dataproc (For running Pyspark)
+  - BigQuery (Stores cleaned data)
 
 ---
 
