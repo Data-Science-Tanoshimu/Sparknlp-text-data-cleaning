@@ -19,10 +19,10 @@ spark = SparkSession \
     .config('spark.sql.debug.maxToStringFields', 2000) \
     .getOrCreate()
 # Temp bucket for bigquery
-spark.conf.set('temporaryGcsBucket', 'clean-data-temp')
+spark.conf.set('temporaryGcsBucket', 'TEMP_BUCKET_NAME')
 
 # Input bucket, filename, schema
-input_bucket = 'gs://raw-data-cleaner/'
+input_bucket = 'INPUT_BUCKET_NAME'
 filename = 'reddit_thinkpad.csv'
 schema = StructType(
     [
@@ -114,7 +114,7 @@ def main():
     # Insert into bigquery
     to_bigquery = df.select('title', 'selftext', 'sentiment', to_date('date', 'yyyy-MM-dd').alias('date'))
     to_bigquery.createOrReplaceTempView('dataset')
-    save_bigquery(to_bigquery, 'reddit_sentiment.post')
+    save_bigquery(to_bigquery, 'TABLE_NAME')
 
     print('Done!')
 
