@@ -4,8 +4,7 @@
 This is an example of cleaning data using pyspark on Google Cloud Platform. The text data were cleaned using Spark-nlp.
 
 This uses the following GCP services:
-  - Cloud Functions (Scrapes data and creates simulated data to clean)
-  - Cloud Storage (Stores the simulated data)
+  - Cloud Storage (Stores the simulated data scraped and created locally)
   - Dataproc (For running Pyspark)
   - BigQuery (Stores cleaned data)
 
