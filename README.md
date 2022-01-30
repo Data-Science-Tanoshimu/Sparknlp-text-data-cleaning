@@ -1,17 +1,16 @@
 # Pyspark-text-data-cleaning
 
 ### Intro
-This is an example of cleaning data using pyspark on Google Cloud Platform. The data were scraped from Reddit (https://www.reddit.com/r/thinkpad/) and stored in Could Storage. The text data were cleaned using Spark-nlp on Dataproc and inserted into BigQuery. 
+This is a project that displays how to clean data using pyspark on the Google Cloud Platform. The data was scraped from Reddit (https://www.reddit.com/r/thinkpad/) and stored in Could Storage. The text data was cleaned using Spark-nlp on Dataproc and inserted into BigQuery. 
 
-This uses the following GCP services:
-  - Cloud Storage (Stores the simulated data scraped and created locally (reddit_thinkpad.csv))
+This project uses the following GCP services:
+  - Cloud Storage (Stores simulated source data (reddit_thinkpad.csv))
   - Dataproc (For running Pyspark (clean-data.py))
   - BigQuery (Stores cleaned data)
 
 ---
 
 ### GCP Architecture
-The whole architecture is like the picture below.
 
 ![architecture](gcp_architecture.png)
 ---
